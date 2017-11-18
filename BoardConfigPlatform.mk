@@ -57,6 +57,10 @@ BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += zram.backend=z3fold
 BOARD_KERNEL_CMDLINE += buildvariant=userdebug
 
+# !!! TEMPORARY HACK
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+# !!! TEMPORARY HACK
+
 # See README_Xperia in Kernel Source
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
