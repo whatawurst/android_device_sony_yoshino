@@ -337,9 +337,14 @@ service qns /vendor/bin/qns -d /qns -l /qns
     socket qnsbsd stream 660 qns system
     disabled
 
+service logcat_charger /system/bin/logcat -b all -f /cache/logcat.txt -v threadtime
+    class main
+    user root
+    group system
+    disabled
+
 on charger
-    setprop sys.usb.config mass_storage
-    load_system_props
+    start logcat_charger
 
     start hvdcp_opti
 
