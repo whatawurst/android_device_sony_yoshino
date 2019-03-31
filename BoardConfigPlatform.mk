@@ -90,7 +90,7 @@ MAX_EGL_CACHE_SIZE := 2048*1024
 TARGET_EXFAT_DRIVER := sdfat
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_yoshino
+#TARGET_INIT_VENDOR_LIB := libinit_yoshino
 
 ### CAMERA
 BOARD_QTI_CAMERA_32BIT_ONLY := true
@@ -170,6 +170,4 @@ TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
 ### VENDOR SECURITY PATCH LEVEL
 VENDOR_SECURITY_PATCH := 2019-09-01
 
-ifeq ($(WITH_TWRP),true)
--include $(PLATFORM_PATH)/twrp.mk
-endif
+include $(PLATFORM_PATH)/twrp.mk

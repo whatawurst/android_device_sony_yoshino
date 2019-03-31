@@ -31,7 +31,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(PLATFORM_PATH)/overlay
 
 ### RECOVERY
-ifeq ($(WITH_TWRP),true)
 # Add Timezone database
 PRODUCT_COPY_FILES += \
     system/timezone/output_data/iana/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
@@ -41,7 +40,6 @@ PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/recovery/root/system/etc/vintf/manifest.xml:recovery/root/system/etc/vintf/manifest.xml \
     $(PLATFORM_PATH)/recovery/root/vendor/etc/vintf/manifest.xml:recovery/root/vendor/etc/vintf/manifest.xml
 
-else # WITH_TWRP
 ### VERITY
 ifeq ($(WITH_VERITY),true)
 PRODUCT_SYSTEM_VERITY_PARTITION := /dev/block/platform/soc/1da4000.ufshc/by-name/system
@@ -51,4 +49,3 @@ endif # WITH_VERITY
 
 include $(PLATFORM_PATH)/platform/*.mk
 include $(PLATFORM_PATH)/vendor_prop.mk
-endif # WITH_TWRP
