@@ -191,6 +191,4 @@ DEXPREOPT_GENERATE_APEX_IMAGE := true
 ### ALLOW VENDOR FILE OVERRIDE
 BUILD_BROKEN_DUP_RULES := true
 
-ifeq ($(WITH_TWRP),true)
--include $(PLATFORM_PATH)/twrp.mk
-endif
+include $(PLATFORM_PATH)/twrp.mk
