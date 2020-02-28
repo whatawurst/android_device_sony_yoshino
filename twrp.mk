@@ -50,6 +50,8 @@ TW_DEFAULT_BRIGHTNESS := 1600
 
 TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone4/temp
 
+TW_SCREEN_BLANK_ON_BOOT := true
+
 # Add logcat support
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
